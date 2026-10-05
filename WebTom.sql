@@ -32,3 +32,30 @@ CREATE TABLE userpost(
 	id_publicacao INT,
     FOREIGN KEY (id_publicacao) REFERENCES publicacao(id_publicacao)
 );
+
+-- 3 feeds
+INSERT INTO feed (conteudo, anuncios) VALUES
+('Feed principal', TRUE),
+('Feed de tecnologia', FALSE),
+('Feed de esportes', TRUE);
+
+
+-- 3 publicações
+INSERT INTO publicacao (conteudo, descricao, data_publicacao) VALUES
+('Minha primeira publicação', 'Conhecendo a nova rede social.', '2026-10-01 10:00:00'),
+('Tecnologia é incrível', 'Hoje aprendi algo novo sobre programação.', '2026-10-02 14:30:00'),
+('Meu time ganhou!', 'Foi um ótimo jogo de futebol.', '2026-10-03 20:00:00');
+
+
+-- 3 usuários
+INSERT INTO usuario (nome, username, bio, configuracoes, id_feed) VALUES
+('Davi Cruz', 'davihcruz', 'Estudante e programador.', 'Tema escuro', 1),
+('João Silva', 'joaosilva', 'Apaixonado por tecnologia.', 'Perfil público', 2),
+('Carlos Souza', 'carlossouza', 'Fã de futebol.', 'Notificações ativadas', 3);
+
+
+-- 3 relações entre usuários e publicações
+INSERT INTO userpost (id_usuario, id_publicacao) VALUES
+(1, 1),
+(2, 2),
+(3, 3);
