@@ -35,9 +35,9 @@ CREATE TABLE userpost(
 
 -- 3 feeds
 INSERT INTO feed (conteudo, anuncios) VALUES
-('Feed principal', TRUE),
-('Feed de tecnologia', FALSE),
-('Feed de esportes', TRUE);
+('Feed principal', 0),
+('Feed de tecnologia', 0),
+('Feed de esportes', 1);
 
 
 -- 3 publicações
