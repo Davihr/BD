@@ -55,7 +55,7 @@ SELECT * FROM clientes
 WHERE estado IN ('SP','RJ','BH');
 
 SELECT * FROM clientes 
-WHERE nome LIKE 'M%' (começa com M);
+WHERE nome LIKE 'M%' /*(começa com M)*/;
 
 SELECT * FROM clientes 
 WHERE telefone IS NULL;
