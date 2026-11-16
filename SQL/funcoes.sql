@@ -1,0 +1,102 @@
+-- AGORA
+SELECT NOW();
+
+-- DATA DE HOJE
+SELECT CURDATE();
+
+-- HORA DE AGORA
+SELECT CURTIME();
+
+-- ANO
+SELECT YEAR(NOW());
+
+-- MÊS
+SELECT MONTH('2024-10-15');
+
+-- DIA
+SELECT DAY('2024-10-15');
+
+-- SOMA OS DIAS, MESES E ANOS
+SELECT DATE_ADD(NOW(), INTERVAL 7 DAY);
+
+-- DIFERENÇA DAS DATAS
+SELECT DATEDIFF(CURDATE(), '2009-11-23');
+
+-- FUNCOES MATEMÁTICAS
+
+-- VALOR ABSOLUTO
+SELECT ABS(-50);
+
+-- ARREDONDA
+SELECT ROUND(19.567,2);
+
+-- ARREDONDA PARA CIMA
+SELECT CEIL(9.1);
+
+-- ARREDONDA PARA BAIXO
+SELECT FLOOR(9.9);
+
+-- POTÊNCIA
+SELECT POW(2,3);
+
+-- NÚMERO ALEATÓRIO
+SELECT RAND();
+
+-- FUNÇÕES DE STRING
+
+-- CONVERTER PARA MAIÚSCULA
+SELECT UPPER('davi');
+
+-- converte para minúscula
+select lower('DAVI');
+
+-- RETORNA O TAMANHO DO TEXTO
+SELECT LENGTH('DAVI');
+
+-- JUNTA TEXTOS
+SELECT CONCAT('Davi','-','davi@email.com');
+
+-- RECORTA TEXTO
+SELECT SUBSTRING('Davi', 1, 3);
+
+-- SUBSTITUI PARTE DO TEXTO
+SELECT REPLACE ('Davi Cruz', 'Cruz', 'C.');
+
+-- REMOVE ESPAÇO EXTRA
+SELECT TRIM('Davi');
+
+-- FUNÇÃO DE AGREGAÇÃO
+
+-- CONTA REGISTROS
+SELECT COUNT(*) AS total_clientes FROM clientes;
+
+-- SOMA VALORES
+SELECT SUM(preco) FROM produtos;
+
+-- MÉDIA
+SELECT AVG(preco) FROM produtos;
+
+-- MENOR VALOR
+SELECT MIN(preco) FROM produtos;
+
+-- MAIOR VALOR
+SELECT MAX(preco) FROM produtos;
+
+ALTER TABLE produtos ADD COLUMN categoria VARCHAR(50);
+
+-- AGRUPAMENTO
+
+-- AGRUPAR POR CATEGORIA
+SELECT categoria, COUNT(*) AS total_produtos FROM produtos GROUP BY categoria;
+
+-- EXERCÍCIOS
+SELECT categoria, AVG(preco) AS media_categoria FROM produtos GROUP BY categoria;
+
+SELECT MIN(preco) AS menor_preco, MAX(preco) AS maior_preco FROM produtos;
+
+-- FILTRO APÓS AGRUPAR
+
+SELECT categoria, COUNT(*) AS total
+FROM produtos
+GROUP BY categoria
+HAVING COUNT(*) >= 2;
